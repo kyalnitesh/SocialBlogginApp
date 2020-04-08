@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="col-md-12">
+        <h4>Here we are collecting all amazing articles related to programming languages and all super automation scripts.
+        So, go ahead <span *ngIf="!isAuthenticated">and create account now</span> to start writing articles</h4>
+    </div>
+</div>
+<div class="container align-right" style="margin-bottom: 10px;">
+    <div class="col-md-12">
+        <button class="btn btn-primary" routerLink="/register" *ngIf="!isAuthenticated">Register Now</button>
+    </div>
+</div>
+<app-article-list></app-article-list>
+
+<div class="container align-right" style="margin-bottom: 10px;">
+    <div class="col-md-12">
+        <button class="btn btn-primary" routerLink="/articles">More...</button>
+    </div>
+</div>

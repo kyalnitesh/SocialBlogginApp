@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+.img-responsive-small {
+    max-width: 150px;
+    max-height: 150px;
+}
+
+.align-left {
+    text-align: left;
+}
+
+.align-right {
+    text-align: right;
+}

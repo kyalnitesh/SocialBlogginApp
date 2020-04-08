@@ -1,0 +1,32 @@
+ <div class="container padder">
+   <div class="col-md-12">
+ <button
+    class="btn btn-primary"
+    *ngIf="!showCommentForm"
+    (click)="onShowCommentForm()"
+  >
+    Add Comment
+  </button>
+
+  <div *ngIf="showCommentForm">
+    <form #commentForm="ngForm" (ngSubmit)="OnSubmit(commentForm)">
+      <label for="comment">Write a comment</label>
+      <textarea
+      class="form-control"
+        id="comment"
+        name="comment"
+        placeholder="Your comment goes here"
+        style="height:200px"
+        ngModel
+      ></textarea>
+      <div class="align-right">
+      <input type="submit" class="btn btn-success" value="Submit" /> |
+      <input
+        type="button"
+        class="btn btn-danger"
+        value="cancel"
+        (click)="onCancel()"
+      /></div>
+    </form>
+  </div>
+</div></div>

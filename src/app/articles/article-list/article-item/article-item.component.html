@@ -1,0 +1,79 @@
+<!-- <div class="container">
+  <div class="col-md-12">
+    <div class="col-md-8" *ngFor="let article of articles">
+      <div class="col-md-8">
+        <div class="jumbotron">
+          <h3>
+            <b>{{ article.title }}</b>
+          </h3>
+          <p>{{ article.description }}</p>
+          <h6>{{ article.publishedOn }}</h6>
+          <h6>{{ article.publishedBy }}</h6>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="jumbotron">
+          <img
+            [src]="article.imagePath"
+            alt="{{ article.title }}"
+            class="img-responsive-small"
+          />
+        </div>
+      </div>
+    </div>
+    <app-article-detail></app-article-detail>
+  </div>
+</div> -->
+
+<!-- News jumbotron -->
+<div class="container">
+  <div class="col-md-12">
+    <div
+      class="jumbotron text-center hoverable p-4"
+      *ngFor="let article of articles"
+    >
+      <!-- Grid row -->
+      <div class="row">
+        <!-- Grid column -->
+        <div class="col-md-4 offset-md-1 mx-3 my-3">
+          <!-- Featured image -->
+          <div class="view overlay">
+            <img
+              [src]="article.imagePath"
+              class="img-responsive-small"
+              alt="Sample image for first version of blog listing"
+            />
+            <a>
+              <div class="mask rgba-white-slight"></div>
+            </a>
+          </div>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-7 text-md-left ml-3 mt-3">
+          <!-- Excerpt -->
+
+          <h3 class="h4 mb-4 align-left"><b>{{article.title}}</b></h3>
+
+          <p class="font-weight-normal align-left">{{ article.description | slice: 0:50 }}...</p>
+          
+          <div style="float: left;">
+          <a class="btn btn-success margin-right" routerLink="/article/{{article.id}}/details">Read more </a>
+          <a class="btn btn-primary margin-right" routerLink="/editor/{{article.id}}/edit" *ngIf="!article.toHideControls"> Edit</a>
+          <a class="btn btn-danger margin-right" (click)="onArticleDelete(article)"  *ngIf="!article.toHideControls"> Delete</a> 
+        </div>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <p class="font-weight-normal align-right">
+        by
+        <a
+          ><strong>{{ article.publishedBy }}</strong></a
+        >, {{ article.publishedOn | date: "short" }}
+      </p>
+      <!-- Grid row -->
+    </div>
+    <!-- News jumbotron -->
+  </div>
+</div>

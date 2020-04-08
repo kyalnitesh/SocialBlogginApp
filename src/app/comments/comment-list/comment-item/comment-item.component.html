@@ -1,0 +1,8 @@
+<div class="col-md-12">
+  <h3>Comments</h3>
+  <div *ngFor="let comment of comments" class="text-center hoverable p-6 comment">
+    <div class="comment">
+    <p class="font-weight-normal align-left">{{ comment.comment }}</p>
+    <h6 style="float: right;"> <i> {{comment.commentBy}} </i></h6>
+  </div></div>
+</div>
